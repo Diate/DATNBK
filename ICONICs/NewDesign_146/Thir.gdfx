@@ -1,0 +1,460 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Canvas Background="#FFFFFFFF" Name="ThisDisplay1" Width="1920" Height="1042" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:iwm="clr-namespace:Ico.Windows.Media;assembly=IcoWPF" xmlns:gwx="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCore" xmlns:script="clr-namespace:Ico.Script;assembly=IcoScriptEngine" xmlns:ic="clr-namespace:Ico.Collections;assembly=IcoCollections" xmlns:gwxcmd="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCoreCommands">
+  <Canvas.Resources>
+    <BitmapImage x:Key="GwxThumbnailImageKey">
+      <iwm:BitmapImageInfo.StreamSource>
+        <iwm:Base64Stream Data="iVBORw0KGgoAAAANSUhEUgAAAQAAAACKCAYAAABFLpRsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABCtSURBVHhe7d1ZktzGEcZxkNQuSqTE4RoKieET2I9+84Nv4VP4AI7wqfzqR59DUoRIcUSR2nfR+sFMRXM8HE430OgC8P0jKgAUlq5GVWZVZSaAC//545+ePLp6rQshrIsrXz3uLvzrL3998o+Xbz7NCiGshb8/edRdfLoeQlghUQAhrJgogBBWTBRACCsmRsAF8e2333aPHj3qrly50j1+/Li7cOFCd+nSpe7nn3/u12/cuNH9+uuv3Weffda9/vrr3TvvvNN9/vnn3auvvtq9/PLLz+Q7x/bt27e74+Pj7qWXXurzP/300/74r7/++pnrX7x4sb/GDz/80L322mv9sq7luNAeMQIuiCdPnnQPHjzo3n333V5ACeX169e7a9eu9UJPKRBi+Y796aefegEnyJSGfPz444/dF1980afvv/++++abb7rvvvuuVyj2OZ5ww/X9nmsdHR31x1+9erX/fdS1QrtEASwEvezNmze7+/fv90JXPbhe2b5agqASYr22HvyXX37phbgE/q233uoFXQ/+5Zdf9ue98sorvYJ54403+msQborDdWE/xSLPvroWxRPaJQpgIRA+w3lCrcevPIJ9EkL8/vvv9z07AbVNWAm8HpwSoRgM3ykK17l8+XJ/rerdQXGcBuVT16KEQrvEBhDCSokNIISVEwUQwoqJAghhxYxuA2BMYixiRAptwCjIeMc/vw0s+QyFqcu24JXhqRkKG8DoCkCjAbdQaANCTCmz9m9TLwKLuPnK1RfaQGAWrwxPyxD2ZgSkobij5pT0kucp9xz/G7jy1oz6fZ7b8iTnPe5Q+C9j1eeqbQA0KT+3wJmKeHv48GEfzCLyjT+8Amvk2++40D4E5KOPPvq9vgQxGQVVXavPr776qvvwww9/Xxez4Bjba2G1CkCwSgW5wLqGYQpj6GvbcJm2NQS2LTouzAP1a/RTIc56dRGKlLh6lG9dHcuvOlb3a2IvNgDD5M2IsXBYKDaN/M0334wNYAF4IIsRsMKydyWBQCGsnCiAEFZMFEAIKyYK4ATlYmktKVfYjlbrcjMdul4PogD88W18rVP6ZRkwx0qMaKfl75rCdpx2D1tMh+QgXgC+dRbMilBzLLeMPNuSZ9H5ZmlIoais2HBtCsHbbeQ7j5W69ltn7d7VQko5jVEp/gPfszfybBuCexpDyjWFF6B6s/OGDavDfYcYj1WXhbbtXoxZ7l3KOKYX4NLf7v7hn/++dPlp1nAIpD9EQJ+HP+1NM26mF1JooBqP8wiOcykFjaSGcfbx69pn23HyanRgn3V5bsxZv/8iXGMoGolKUo4xroddr+NeuTeEf5vG6zzHn+ccyg4CqATbEBZ1XHUtz+97aQk/PIXkWEpecgyF4zz5fPK137rrbKO8irHuvd8XIOaeDA3BPcm2ZSQv5OM8ivks/tz91lknDuBZStm0xpByTTECINSE3LEUX0XTaQel1Cl7x5XS9p9AwThGcr79pTjrXG8X2nYkNXZdup5U4dVjsEsZxxwBNKUAVHw1Aku9f91s+6onss/DEGNWblEjkdYY0vDWGgg0tgLYB4dWAE15AfQOhnsEnCLRAOXpTQwHLWv4SFD3ASFTIa2lMXudtUC45pAOyeymAJujgnA+Dj0CcB29lbZhJGcorzwav7ZiqV6VbZd5/tpYdShwhH9+MPAZ2VEAlgzFGjHFZMnQV6O+MC2RprB3bt261Y8IGfLqwyV3797tPyxSS27ft99+++kZYSqaUwB6h9bRW42VQkZ1h6QJG4D5n6Ggc8wHDQ1Z/M09y2XEFWQuaR5r/mhbsl8PMiWnCa5y8xObw9pfZaw5rfXT/MdTWNjX6gVYKou0AegFJCOAEu4SJsJVbkDRg5aUhkbdUuNUFmWiAFWQJfyn9PahRRIItANjCnNGAGFbVu0FaIESijFSCIckCiCEDYzuxkpzIAog7J05eHbOwlRIJCr7k+G3B5/ENphayd9XVOoURAGcQGUyOraW5tbIlPnevXv903+E5eOPP+4++eSTXnjkS17DXa/lrn08KfVkYSuwaUnsKGwo9RyKoCaGa8u5EgVwgqrsFtPcIBz1pJ+lbQJEkMCzw9tTbt8WPTvgvvUkoyRgifGNEU5Qk+ClsR8PnpLJvQDVm6nwbdBYXFcj2ifKN5awadgs72MwpFzxAiyLMb0Ak78QxPBOYzZ3et6LIzQ4f1Ke4SHh14jNweyvuZcGupknprzysE1j32QMBaDMhrgU3a7lOMmu5dIDK49ybKN4q+feVlmH/aKt62CHKmYvBJl8CkBrEXSN2XBKz6Rx1mPApTgIP+VgSajt21QuGqVz5RlRuIY8S+l5CmgqlOXOnTuDtXQI+ySBQCegcMYYAYzNkHJlCrAsEgi0RwhaqymEsYkCOAEjo562tbRv42f4H6aaY6U5kFYVJqHsNHPEVGipgUAHeS343KHdVfoYaQoLu/ISvqm8AKYrvv1AcMr+QGCUobw6BKde+U2gKo+QOd6+sVyo26BOTrJpaDYSM/f2H5XTvbF+mp1kX3U7ay/AeaibPSc0gnrnvWg2PYXGriFL5ZpcC1WHhIRh2DqFQoAk+ToK+RqyRl3CZF9LHUgCgbZgWy9A9RYqX6PRS2kAloTGzdVLlJbVq+gZqpHIo6GnfCnIafM75SP81ciV372o8vl/p73yaqgWPw/xAiyLxXkBCD4hITzVW9RUguDIr96C0GuYpTAohxZ6C+WrXsG771SOdXl5311olcQBrICMAJZF4gBCCKMQBRDCiokCCGHFjG4DMG8sOwDLeDg8jKeMpl5ksY0NQD2qz9RjWzCQj2UDGF0BaCwaDqMTJRDaoAyz2ygA8MAwIqYu20I9Do0/2IsCACWQXqMtSoAjyKHYmwIIIbTPXhSAIaM5Z55eawejMTaAbQOm1GNFNoY2UJdGcdtO5U5jLwqA0YiRYowChnFgjyHE5owUwXlxnvr0Pf/QBmSLYhbUNTQCdi8KoIVIQL1Waxwymq4iAVmNt6kX91Eaam0O46EePXNCmY9hBMzYbkXEADh/xjaur0oB0JyGUPWxCk8bytNDemTX6MUNtg/eNux4j/U6zvH2OdbS8dY9x04zz/kDEWGdrEoBmAdL5rQ1vC2DpeTpQqnmVobLBN12GcTYNigFQ3rL0siE3zFja+gQ9klsABPRgg1g26cBS0nGBtAOOhr1GRvAGdQjrC2lEFokRsAQVkwUQAgrJgogNEXZHeaW5spkRsAWb9KQuXmrlX7af5qTEXCuwjSVnSdGwBDCaDSvAATjCLah9fjkBd1Y8sHThvbPyffuf1QgkWUlQUb+x9z+z9i4Lz6r7n7Uy0jcH/EZlrbrewtGNdqB5fHxcX984T7CdWCfADAfIVEH1n2/wXX9JqwL+Krf0tbqK0BGtn5H2WpEVeWzb640rwA8vCKVUFQQDwTezI0Kx63/JMhIg7OuUcVl2HVHR0f9soRRfRO6irQ0jal8S+3ARztqqmLbsVK1FYrC69kNm+XVhz4oAdd2/0v51m95vbv25u07zlGeKhvhr/LNsR0WzSsAr7FSsZbera9Crl271guOfJU4pxh3ZdagzMfrqzLVeNlNLNccs0+g9LgE0f0poawREsEjnITOsQVhLAWh99Y+LE/DeRSw+yypg81j67dq9ADniBZFKaAq35xZZCRgeJYass7BCGjITdAIqLLqufXShE0nYFhO+LUx+5XPOoElyDoIx/soSx1LGdhP0VIUrl3DdiMu51ePT6Dl+S3rykJhO09ZbLuX7onj5Ek6pSlQTvXpv0pDWOzjwOFZ5qQA/N4ciRcghDA7ogBCWDF5GnAiDmndn9MUIJxNpgAjw5q7aU0+jTm7eUI4i9UrgHL/sPiy5lYwiaVE27IgswKzLhvhcFPN3f0TAlavALiNCDpXkVS+XkuJ8BsBcB3ZbygN6yHMndUrALYKPl/zY1AItZTsc4z5Fn8wf7RUx4cwZxapABjcWkshtMjqRwAhrJlFKoByX7WUQmiRVY8AGPhe5ALc5OQDKCHMnVUrgHrqzJILkMsPXH2s/Z4ZF3jB5WefdZw8PoS5supIQEJOqLn7RLtZZ/mvYTshx6ZrEJTG5vHn4ZCGQIpql0hA56jPPNjVDtqldqf9jREJmFDgiZijAqjAqERCtoPOpzqgKIBwLnZVACD8NfUJbUC+6n0JQ4gCWAlDFEBYLnkYKISVEwUQwopZpAIoK35LKYQWyQjgNwT3sKwW1k8G/JRLMIQlsXo3IGEX2MNNx8/PWKb83CzlA+cK4++3z7Xt9wbZbZijG5ASjAuwPbRTXoChJA7gNygAbq4S7BoJUADyCAwFwedqFODG275x40Z/3HmZowKoV2SHtiBjPnKivQ4hCmBC5qgAKDrvPghtce/evb4eh36LYLFuQMLWWgphTIb2/kWMgCGsmNGnAL6nxnCUd+a1AxsHg16mAMvAFMAU2+fPhrAXG4C5JiWQ5+bbQV0wXjJsRgHMn6YVABjh4j5qC3NGo7Jt3EeHUgD18JF2xH6i7DoW7i8KjKHZ/7BvjSPN5hVAWAaHUgAPHz7shbs6EjEXvt9gW8O3pAC8pXmbEc2u+D2KZizD21DGVAAxAobm4N6ieCzFW5TL69atW73/W57tKYQflE0rwj82o48AvEYrBsBlwHawbcRj2D9NTwEM34YGKIQQnk+mACGEUYgCCM3hQ6ws/bwB1hnhLD2UJU8S3uyYMIwogNAUHriSxJIQetZ/gm9ZQn98fNw/tFUPbu0bCmiq35qaKIDQFAzIDI+s/WxJt2/f7q5cudIvr1+/3q+/9957/Udbh74V97ws2QsQBRDCC6jvQSyRKIAQVkwUQAgrJgogHBzhvsKOxftvWvprneHPOhxX+2vf5v6wHVEA4eCwsrPwl8Cz8tdTpQSegFsHb0B5CJzDY2DdeftiyV6AxUUCagj1JKJKY8CxzZJbjyh7LFbj2XzAw7EanTzWZY3RunMco6GxPJ9FNZKlWozXijbQkiEwkYBnUMPBGhISSsKu16gv/xJ0lSrPcY8fP+57GnmOlWzriaxTKnqeF/UCL9of5smSvQB5FmAGUFhGMRSUJ+Bsa5RGJbZrudlTOf68ny4/C9d2zSULwdzICGBlGKkY2RiJmO/arqlOzZuNUChf+2pOPQYR/mWTmp0Bot9ExtH4lkdHR320XEXMyZfu3LnTP0fPxjHWKCzCv2xSu6FZjHDKJmOUIxnhTE2eBVgA5s0akCGzdXNbjcmQGpYqurZ3oebpYRzUE2Nsufnu37/fL6cmzwIsgJoX+9xVzaPNm82tCa6GZd95rP3PQ0PJkHk8uGM9BHTz5s1+avPBBx8c5A1FS67T1bRW78Q3T9agLL1Q0rvlzKcJbs2j7Y8fP6yFdFdPIfTpvcPaSIufAaYvFdxkXmwqY+pSYbKVbxrjWPaNIbaMTVwrdo3lEgUwIgRlH9ZiQl6J8BN4636PLcM6gfdGZvsJ7VjlMCo61MiobDP+o/9ccQ9Ts2QvwGoiAQmFXtJ8H1WpPkBhaQpQc39RVrtQjSQ2hHEg+A8ePOjjICgCRkH1yFYzJZsRli2QSMAdIJxl+Rf7T0j1KPLl6Vks9aK7sqlEwnAIfFn+yxMwtfAjXoAFoKc3MmH115h4BTQsjYw3QMOyjxcghLWwGgUQQvh/ogBCWDGjGwFZoc2xza9DCPvBy2mGGwEfdf8FZvcSPiaKij8AAAAASUVORK5CYII=" />
+      </iwm:BitmapImageInfo.StreamSource>
+    </BitmapImage>
+  </Canvas.Resources>
+  <gwx:GwxDocument.GwxDocument>
+    <gwx:GwxDocument FileVersion="10.97.212.00" IsScalable="True" PreferredStretch="Fill" ScanRate="500">
+      <gwx:GwxDocument.ScriptCodeManager>
+        <script:ScriptCodeManager>
+          <script:ScriptCodeManager.AssemblyReferences>
+            <ic:AssemblyReference AssemblyName="mscorlib" />
+            <ic:AssemblyReference AssemblyName="System" />
+            <ic:AssemblyReference AssemblyName="System.Core" />
+            <ic:AssemblyReference AssemblyName="System.Data" />
+            <ic:AssemblyReference AssemblyName="System.Xml" />
+            <ic:AssemblyReference AssemblyName="System.Drawing" />
+            <ic:AssemblyReference AssemblyName="System.Windows.Forms" />
+            <ic:AssemblyReference AssemblyName="WindowsBase" />
+            <ic:AssemblyReference AssemblyName="PresentationCore" />
+            <ic:AssemblyReference AssemblyName="PresentationFramework" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeCore" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeCoreCommands" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeViewControl" />
+            <ic:AssemblyReference AssemblyName="GwxConfigCore" />
+            <ic:AssemblyReference AssemblyName="IcoComponentModel" />
+            <ic:AssemblyReference AssemblyName="IcoFwxClientWrapper" />
+            <ic:AssemblyReference AssemblyName="IcoCommonCore.Net" />
+            <ic:AssemblyReference AssemblyName="IcoSecurityLogin" AssemblyCodebase="file:///C:/Program Files/ICONICS/GENESIS64/Components/IcoSecurityLogin.DLL" />
+          </script:ScriptCodeManager.AssemblyReferences>
+        </script:ScriptCodeManager>
+      </gwx:GwxDocument.ScriptCodeManager>
+      <gwx:GwxDocument.RuntimeWindowProperties>
+        <gwx:GwxWindowProperties LeftString="0%" TopString="0%" WindowState="Maximized" WidthString="100%" HeightString="100%" MenuVisible="False" NavigationBarVisible="False" StatusBarVisible="False" TitleBarVisible="False" OuterBorder="False" InnerBorder="False" />
+      </gwx:GwxDocument.RuntimeWindowProperties>
+    </gwx:GwxDocument>
+  </gwx:GwxDocument.GwxDocument>
+  <gwx:TemplateLayer Background="#FFFFFFFF" gwx:GwxProperties.Keyword="tem">
+    <Label FontFamily="Segoe UI" FontSize="36" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="PARAMETER" Width="543.012437" Height="64.688983" Canvas.Left="731.828651" Canvas.Top="27.808886">
+      <TextBlock Text="SET PARAMETER" />
+    </Label>
+    <Canvas Name="XCONTROL">
+      <Canvas.Effect>
+        <DropShadowEffect ShadowDepth="15" Color="#FF000000" Direction="315" Opacity="0.5" BlurRadius="12.5" />
+      </Canvas.Effect>
+      <Rectangle Fill="#FFFFFFFF" Stroke="#FF000000" StrokeThickness="3" Width="762.726817" Height="327.905043" Canvas.Left="1017.513591" Canvas.Top="105.883079" />
+      <Label FontFamily="Segoe UI" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="XSFW" Width="314.628513" Height="42.294975" Canvas.Left="1029.787709" Canvas.Top="179.203729" gwx:GwxProperties.Locked="True">
+        <TextBlock Text="SPEED FORWARD" />
+      </Label>
+      <Label FontFamily="Segoe UI" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="XFW" Width="314.628513" Height="42.294975" Canvas.Left="1029.787709" Canvas.Top="282.290934" gwx:GwxProperties.Locked="True">
+        <TextBlock Text="FORWARD" />
+      </Label>
+      <Label FontFamily="Segoe UI" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="RANGE1" Width="314.628513" Height="42.294975" Canvas.Left="1029.787709" Canvas.Top="350.231473" gwx:GwxProperties.Locked="True">
+        <TextBlock Text="BACKWARD" />
+      </Label>
+      <Label FontFamily="Segoe UI" FontSize="15" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="RANGE2" Width="146.550132" Height="36.190187" Canvas.Left="1114.2496" Canvas.Top="212.121901" gwx:GwxProperties.Locked="True">
+        <TextBlock Text="0-15 MM/S" />
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Background="#FFFFFFFF" Foreground="#FF000000" FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label4" Width="316.415056" Height="52.640275" Canvas.Left="1370.76177" Canvas.Top="175.137098" gwx:GwxProperties.Locked="True" gwx:GwxProperties.Stretch="Uniform">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" Control="True" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*" TextTrimming="CharacterEllipsis" LayoutTransform="3.04763627819549,0,0,3.04763627819549,0,0" />
+      </Label>
+      <Label FontFamily="Segoe UI" FontSize="12" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Width="228.151908" Height="43.866896" Canvas.Left="1312.474788" Canvas.Top="112.626772" gwx:GwxProperties.Stretch="Uniform">
+        <TextBlock Text="X Control" LayoutTransform="2.12198596491228,0,0,2.12198596491228,0,0" />
+      </Label>
+      <Button FontFamily="Segoe UI" FontSize="12" Name="Button3" Width="140.517544" Height="30.969563" Canvas.Left="1468.989917" Canvas.Top="285.108695" gwx:GwxProperties.Stretch="Uniform">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:LoadDisplayCommand />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="Button" LayoutTransform="1.68982224310777,0,0,1.68982224310777,0,0" />
+      </Button>
+      <Button FontFamily="Segoe UI" FontSize="12" Name="Button4" Width="140.517544" Height="30.969563" Canvas.Left="1468.989917" Canvas.Top="353.727531" gwx:GwxProperties.Stretch="Uniform">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:LoadDisplayCommand />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="Button" LayoutTransform="1.68982224310777,0,0,1.68982224310777,0,0" />
+      </Button>
+    </Canvas>
+    <Canvas Name="ZCONTROL">
+      <Rectangle Fill="#FFFFFFFF" Stroke="#FF000000" StrokeThickness="3" Width="762.726862" Height="327.905051" Canvas.Left="153.45803" Canvas.Top="105.883076">
+        <Rectangle.Effect>
+          <DropShadowEffect ShadowDepth="15" Color="#FF000000" Direction="315" Opacity="0.5" BlurRadius="12.5" />
+        </Rectangle.Effect>
+      </Rectangle>
+      <Label FontFamily="Segoe UI" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="ZSFW" Width="294.550991" Height="40.205457" Canvas.Left="162.110492" Canvas.Top="170.368965">
+        <TextBlock Text="SPEED FORWARD" />
+      </Label>
+      <Label FontFamily="Segoe UI" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="ZFW" Width="294.550991" Height="40.205457" Canvas.Left="162.110492" Canvas.Top="242.300978">
+        <TextBlock Text="FORWARD" />
+      </Label>
+      <Label FontFamily="Segoe UI" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="ZSBW" Width="294.550991" Height="40.205457" Canvas.Left="162.110492" Canvas.Top="307.978034">
+        <TextBlock Text="SPEED BACKWARD" />
+      </Label>
+      <Label FontFamily="Segoe UI" FontSize="22" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="ZBW" Width="294.550991" Height="40.205457" Canvas.Left="162.110492" Canvas.Top="366.357639">
+        <TextBlock Text="BACKWARD" />
+      </Label>
+      <Label FontFamily="Segoe UI" FontSize="15" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="RANGE" Width="137.198266" Height="34.402267" Canvas.Left="238.110724" Canvas.Top="204.032985">
+        <TextBlock Text="0-15 MM/S" />
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Background="#FFFFFFFF" Foreground="#FF000000" FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label2" Width="296.223528" Height="50.039662" Canvas.Left="507.83004" Canvas.Top="169.630718" gwx:GwxProperties.Stretch="Uniform">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" Control="True" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*" TextTrimming="CharacterEllipsis" LayoutTransform="2.88469060150376,0,0,2.88469060150376,0,0" />
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Background="#FFFFFFFF" Foreground="#FF000000" FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label3" Width="296.223528" Height="50.039662" Canvas.Left="508.671462" Canvas.Top="302.129064" gwx:GwxProperties.Stretch="Uniform">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" Control="True" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*" TextTrimming="CharacterEllipsis" LayoutTransform="2.88469060150376,0,0,2.88469060150376,0,0" />
+      </Label>
+      <Label FontFamily="Segoe UI" FontSize="12" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Width="213.592754" Height="41.699718" Canvas.Left="415.079921" Canvas.Top="110.812405" gwx:GwxProperties.Stretch="Uniform">
+        <TextBlock Text="Z Control" LayoutTransform="1.98619786967419,0,0,1.98619786967419,0,0" />
+      </Label>
+      <Button FontFamily="Segoe UI" FontSize="12" Name="Button1" Width="140.517544" Height="30.969563" Canvas.Left="579.529694" Canvas.Top="246.693823" gwx:GwxProperties.Stretch="Uniform">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:LoadDisplayCommand />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="Button" LayoutTransform="1.68982224310777,0,0,1.68982224310777,0,0" />
+      </Button>
+      <Button FontFamily="Segoe UI" FontSize="12" Name="Button2" Width="140.517544" Height="30.969563" Canvas.Left="579.529694" Canvas.Top="369.357582" gwx:GwxProperties.Stretch="Uniform">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:LoadDisplayCommand />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="Button" LayoutTransform="1.68982224310777,0,0,1.68982224310777,0,0" />
+      </Button>
+    </Canvas>
+    <Canvas Name="MANUAL1">
+      <Rectangle RadiusY="17.3634730167917" Fill="#FFFFFFFF" Stroke="#FF000000" StrokeThickness="3" Width="762.726861" Height="327.905016" Canvas.Left="153.458028" Canvas.Top="461.891998">
+        <Rectangle.Effect>
+          <DropShadowEffect ShadowDepth="15" Color="#FF000000" Direction="315" Opacity="0.5" BlurRadius="12.5" />
+        </Rectangle.Effect>
+      </Rectangle>
+      <Button FontFamily="Segoe UI" FontSize="12" Name="MANUAL" Width="281.442881" Height="36.543633" Canvas.Left="396.793584" Canvas.Top="472.91177" gwx:GwxProperties.Stretch="Uniform">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:LoadDisplayCommand />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="ENABLE MANUAL" LayoutTransform="2.03907474937343,0,0,2.03907474937343,0,0" />
+      </Button>
+      <Button FontFamily="Segoe UI" FontSize="12" Name="RUNX" Width="281.442881" Height="36.543633" Canvas.Left="193.621799" Canvas.Top="538.097707" gwx:GwxProperties.Stretch="Uniform">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:LoadDisplayCommand />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="RUN X" LayoutTransform="2.03907474937343,0,0,2.03907474937343,0,0" />
+      </Button>
+      <Button FontFamily="Segoe UI" FontSize="12" Name="RUNZ" Width="281.442881" Height="36.543633" Canvas.Left="584.977285" Canvas.Top="539.085372" gwx:GwxProperties.Stretch="Uniform">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:LoadDisplayCommand />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="RUN Z" LayoutTransform="2.03907474937343,0,0,2.03907474937343,0,0" />
+      </Button>
+      <Button FontFamily="Segoe UI" FontSize="12" Name="SETHOME" Width="281.442881" Height="36.543633" Canvas.Left="396.793584" Canvas.Top="606.24664" gwx:GwxProperties.Stretch="Uniform">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:LoadDisplayCommand />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="SET HOME" LayoutTransform="2.03907474937343,0,0,2.03907474937343,0,0" />
+      </Button>
+      <Button FontFamily="Segoe UI" FontSize="12" Name="SETTARGET" Width="281.442881" Height="36.543633" Canvas.Left="396.793584" Canvas.Top="662.543585" gwx:GwxProperties.Stretch="Uniform">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:LoadDisplayCommand />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="SET TARGET" LayoutTransform="2.03907474937343,0,0,2.03907474937343,0,0" />
+      </Button>
+      <Button FontFamily="Segoe UI" FontSize="12" Name="SUCTION1" Width="281.442881" Height="36.543633" Canvas.Left="396.793584" Canvas.Top="728.717188" gwx:GwxProperties.Stretch="Uniform">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:LoadDisplayCommand />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="SUCTION" LayoutTransform="2.03907474937343,0,0,2.03907474937343,0,0" />
+      </Button>
+    </Canvas>
+    <Canvas Name="AUTO1">
+      <Rectangle Fill="#FFFFFFFF" Stroke="#FF000000" StrokeThickness="3" Width="762.726758" Height="231.678683" Canvas.Left="1017.513595" Canvas.Top="461.892">
+        <Rectangle.Effect>
+          <DropShadowEffect ShadowDepth="15" Color="#FF000000" Direction="315" Opacity="0.5" BlurRadius="12.5" />
+        </Rectangle.Effect>
+      </Rectangle>
+      <Button FontFamily="Segoe UI" FontSize="12" Name="AUTO" Width="346.391192" Height="71.630125" Canvas.Left="1227.542271" Canvas.Top="533.698277" gwx:GwxProperties.Stretch="Uniform">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:LoadDisplayCommand />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="ENABLE AUTOMATION" LayoutTransform="2.84472575606514,0,0,2.84472575606514,0,0" />
+      </Button>
+    </Canvas>
+    <Canvas Name="INFO">
+      <Path Fill="#FFFFFFFF" Stroke="#FF000000" StrokeThickness="3">
+        <Path.Data>
+          <PathGeometry FillRule="EvenOdd" Figures="M1017.51361083984,750.58251953125L1092.18872070313,750.58251953125 1148.40258789063,750.58251953125 1780.24035644531,750.58251953125 1780.24035644531,1028.36462402344 1145.73803710938,1028.36462402344 1092.18872070313,1028.36462402344 153.458023071289,1028.36462402344 153.458023071289,820.345092773438 1017.51361083984,820.345092773438 1017.51361083984,750.58251953125z" />
+        </Path.Data>
+        <Path.Effect>
+          <DropShadowEffect ShadowDepth="12" Color="#FF000000" Direction="315" Opacity="0.75" BlurRadius="12.5" />
+        </Path.Effect>
+      </Path>
+      <RadioButton FontFamily="Segoe UI" FontSize="12" Name="RadioButton5" Width="39.246247" Height="23.844393" Canvas.Left="623.787054" Canvas.Top="902.03341" gwx:GwxProperties.Stretch="Uniform">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick PickMode="RadioButton" LeftMouseButton="True" ExecuteOnDown="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:WriteValueCommand />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock />
+      </RadioButton>
+      <Label FontFamily="Segoe UI" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="DETECT" Width="183.966784" Height="35.289703" Canvas.Left="387.083126" Canvas.Top="890.588101">
+        <TextBlock Text="DETECT CONTAINER" />
+      </Label>
+      <RadioButton FontFamily="Segoe UI" FontSize="12" Name="RadioButton6" Width="39.246247" Height="23.844393" Canvas.Left="623.787054" Canvas.Top="942.091991" gwx:GwxProperties.Stretch="Uniform">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick PickMode="RadioButton" LeftMouseButton="True" ExecuteOnDown="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:WriteValueCommand />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock />
+      </RadioButton>
+      <Label FontFamily="Segoe UI" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="VALID" Width="183.966784" Height="35.289703" Canvas.Left="387.083126" Canvas.Top="934.461785">
+        <TextBlock Text="VALID QR" />
+      </Label>
+      <RadioButton FontFamily="Segoe UI" FontSize="12" Name="RadioButton7" Width="39.246247" Height="23.844393" Canvas.Left="623.787054" Canvas.Top="983.104348" gwx:GwxProperties.Stretch="Uniform">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick PickMode="RadioButton" LeftMouseButton="True" ExecuteOnDown="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:WriteValueCommand />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock />
+      </RadioButton>
+      <Label FontFamily="Segoe UI" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="SUCTION" Width="183.966784" Height="35.289703" Canvas.Left="387.083126" Canvas.Top="978.335469">
+        <TextBlock Text="SUCTION" />
+      </Label>
+      <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label6" Width="170.475886" Height="22.890618" Canvas.Left="941.209922" Canvas.Top="915.386271" gwx:GwxProperties.Stretch="Uniform">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*" TextTrimming="CharacterEllipsis" LayoutTransform="1.30893596491228,0,0,1.30893596491228,0,0" />
+      </Label>
+      <Label FontFamily="Segoe UI" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="POX" Width="183.966784" Height="35.289703" Canvas.Left="749.884468" Canvas.Top="903.940961">
+        <TextBlock Text="POSITION X" />
+      </Label>
+      <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label5" Width="170.475886" Height="22.890618" Canvas.Left="941.209922" Canvas.Top="968.797712" gwx:GwxProperties.Stretch="Uniform">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*" TextTrimming="CharacterEllipsis" LayoutTransform="1.30893596491228,0,0,1.30893596491228,0,0" />
+      </Label>
+      <Label FontFamily="Segoe UI" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="POZ" Width="183.966784" Height="35.289703" Canvas.Left="749.884468" Canvas.Top="961.167506">
+        <TextBlock Text="POSITION Z" />
+      </Label>
+      <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label11" Width="170.475886" Height="22.890618" Canvas.Left="1428.335121" Canvas.Top="796.164303" gwx:GwxProperties.Stretch="Uniform">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*" TextTrimming="CharacterEllipsis" LayoutTransform="1.30893596491228,0,0,1.30893596491228,0,0" />
+      </Label>
+      <Label FontFamily="Segoe UI" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="VOL" Width="183.966784" Height="35.289703" Canvas.Left="1185.498968" Canvas.Top="785.93318">
+        <TextBlock Text="VOLTAGE" />
+      </Label>
+      <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label10" Width="170.475886" Height="22.890618" Canvas.Left="1428.335121" Canvas.Top="842.183983" gwx:GwxProperties.Stretch="Uniform">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*" TextTrimming="CharacterEllipsis" LayoutTransform="1.30893596491228,0,0,1.30893596491228,0,0" />
+      </Label>
+      <Label FontFamily="Segoe UI" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="CUR" Width="183.966784" Height="35.289703" Canvas.Left="1185.498968" Canvas.Top="831.95286">
+        <TextBlock Text="CURRENT" />
+      </Label>
+      <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label9" Width="170.475886" Height="22.890618" Canvas.Left="1428.335121" Canvas.Top="888.203662" gwx:GwxProperties.Stretch="Uniform">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*" TextTrimming="CharacterEllipsis" LayoutTransform="1.30893596491228,0,0,1.30893596491228,0,0" />
+      </Label>
+      <Label FontFamily="Segoe UI" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="DENS" Width="183.966784" Height="35.289703" Canvas.Left="1185.498968" Canvas.Top="877.972539">
+        <TextBlock Text="DENSHY PULSE" />
+      </Label>
+      <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label8" Width="170.475886" Height="22.890618" Canvas.Left="1428.335121" Canvas.Top="934.223342" gwx:GwxProperties.Stretch="Uniform">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*" TextTrimming="CharacterEllipsis" LayoutTransform="1.30893596491228,0,0,1.30893596491228,0,0" />
+      </Label>
+      <Label FontFamily="Segoe UI" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="RPM" Width="183.966784" Height="35.289703" Canvas.Left="1185.498968" Canvas.Top="923.992219">
+        <TextBlock Text="RPM" />
+      </Label>
+      <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label7" Width="170.475886" Height="22.890618" Canvas.Left="1428.335121" Canvas.Top="980.243021" gwx:GwxProperties.Stretch="Uniform">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*" TextTrimming="CharacterEllipsis" LayoutTransform="1.30893596491228,0,0,1.30893596491228,0,0" />
+      </Label>
+      <Label FontFamily="Segoe UI" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="MAS" Width="183.966784" Height="35.289703" Canvas.Left="1185.498968" Canvas.Top="970.011898">
+        <TextBlock Text="MAS" />
+      </Label>
+    </Canvas>
+    <Rectangle Fill="#FFD8D8D8" Stroke="#FF000000" Name="Setinlvalue" Width="134.426532" Height="25.368229" Visibility="Hidden" Canvas.Left="271.948411" Canvas.Top="50.419355">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxColor TargetPropertyName="Fill" UseEndColor="True" AnimationMode="Discrete" DataSource="x=IF {{localsim::currentUser}}==&quot;admin&quot;&#xD;&#xA;THEN setvalue({{localsim::enableFullscreen}}, 1)&#xD;&#xA;ELSE setvalue({{localsim::enableFullscreen}}, 0)" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    </Rectangle>
+    <Rectangle Fill="#FF0F243E" Stroke="#FFBF0000" StrokeThickness="5" Name="Blurreg" Width="1920" Height="1042" Opacity="0.85" Canvas.Left="0" Canvas.Top="0">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxHide AnimationMode="Discrete" DataSource="x={{localsim::enableFullscreen}}" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    </Rectangle>
+  </gwx:TemplateLayer>
+</Canvas>
